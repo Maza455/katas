@@ -1,12 +1,11 @@
 
-
-var name = "Tshepo"
+var name = "Tshepo!"
 
 function firstFunc(hello, name) {
     console.log(hello + " " + name);
 }
 
-firstFunc("hello", name);
+firstFunc("Hello", name);
 console.log(" ")
 
 //* EVEN OR ODD 
@@ -25,89 +24,67 @@ console.log(" ")
 
 //Shapes
 
-var dimension = 2;
+// var dimension = 2;
 var edge = '#';
-
-for (var i = 1; i <= dimension; i++) {
-    if (i === 1 || i === dimension) {
-        printline = Array(dimension + 1).join(edge);
-    } else {
+function square(int){
+    for (var i = 1; i <= int; i++) {
+    if (i === 1 || i === int) {
+        printline = Array(int + 1).join(edge);
     }
     console.log(printline);
 }
-
-var dimension = 4;
-var edge = '#';
-
-for (var i = 1; i <= dimension; i++) {
-    if (i === 1 || i === dimension) {
-        printline = Array(dimension + 1).join(edge);
-    } else {
-    }
-    console.log(printline);
 }
+square(2)
 
+console.log(" ")
 
-for (var i = 2; i>=1;  i--)
-{ var str= "";
-for (var j = i; j<=2; j++) {
+square(4)
+
+console.log(" ")
+
+function triangle(int){
+    for(var i = int; i>=1; i--){
+  var str = "";
+  for(var j = i; j<=int; j++){
     str += "#"
+  }
+  console.log(str);
 }
-console.log(str);
 }
+triangle(2)
 
-for (var i = 4; i>=1;  i--)
-{ var str= "";
-for (var j = i; j<=5; j++) {
-    str += "#"
-}
-console.log(str);
-}
+console.log(" ")
 
-var n = 2;
-generateNumberTriangle(n);
+triangle(4)
+console.log(" ")
 
-function generateNumberTriangle(n) {
-    var width = (2 * n) -1; 
-    var midpoint = Math.floor(width / 2); 
-    let level = ''; 
 
-    for(var i = 0; i < n; i++) { 
-        level = '';
-        for(var j = 0; j < width; j++) {
-            if(j < midpoint-i || j > midpoint+i) {
-                level += ' ';
-            } else {
-                level += '#';
-            }
-        }
-        console.log(level);
+function pyramid(rows){
+    for(let i = 1; i <= rows; i++){
+      let str = '';
+      for(let k = 1; k <= (rows - i); k++){
+        str += ' ';
+      }
+      for(let j = 0; j != (2 * i - 1); j++){
+        str += '#';
+      }
+      for(let k =  i + 1; k <= rows; k++){
+        str += ' ';
+      }
+      console.log(str);
     }
-}
+ }
+ pyramid(2);
 
-               
-var n = 4;
-generateNumberTriangle(n);
+ console.log(" ")
 
-function generateNumberTriangle(n) {
-    var width = (2 * n) -1; 
-    var midpoint = Math.floor(width / 2); 
-    let level = ''; 
+ pyramid(4)
 
-    for(var i = 0; i < n; i++) { 
-        level = '';
-        for(var j = 0; j < width; j++) {
-            if(j < midpoint-i || j > midpoint+i) {
-                level += ' ';
-            } else {
-                level += '#';
-            }
-        }
-        console.log(level);
-    }
-}
 
-// FRAME SOME TEXT 
+ console.log(" ")
+
+ 
+// // FRAME SOME TEXT 
 
 function longestWord(str) {
     let words = str.split(" ");
@@ -131,30 +108,13 @@ function longestWord(str) {
 
 console.log(longestWord("the quick brown fox ate my chickens"));
 
-function longestWords(str) {
-    let words = str.split(" ");
-    let size = 0;
-    let max = [""];
-   
+console.log(" ")
 
-    for (let i = 0; i < words.length; i++) {
-        if (words[i].length >= size) {
-            size = words[i].length;
-            if (max[max.length - 1].length < words[i].length) {
-                max = [];
-                max.push(words[i]);
-            } else {
-                max = [...max, words[i]];
-            }
-        }
-    }
-
-    return [...max];
-}
-
-console.log(longestWords("once upon a time"));
+console.log(longestWord("once upon a time"));
+ 
+console.log(" ")
                 
-// mixedArray
+// // mixedArray
         const array1 = [1, 2, 3];
                 
         const array2 = [11, 22, 33];
@@ -165,6 +125,8 @@ console.log(longestWords("once upon a time"));
                 
                 console.log(mixedArray);
 
+               
+ console.log(" ")
                
 // frame
                 function frame(arr) {
@@ -191,5 +153,5 @@ console.log(longestWords("once upon a time"));
             }
             
                 console.log(frame(["Write", "good", "code", "every", "day"]));
-            
+
 
